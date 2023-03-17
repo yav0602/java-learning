@@ -1,13 +1,18 @@
 package com.yavdev;
 
-import com.yavdev.section10.Cart;
+import com.yavdev.section10.ItineraryGuide.ItineraryGuide;
 
 public class Main {
 
     public static void main(String[] args) {
-        Cart cart = new Cart();
+        final ItineraryGuide itineraryGuide = new ItineraryGuide();
 
-        cart.displayCartOptions();
+        itineraryGuide.addPlace("Zaporyzhzhya", 1000);
+        itineraryGuide.addPlace("Kyiv", 3000);
+        itineraryGuide.addPlace("Ivano-Frankivsk", 2000);
+        itineraryGuide.addPlace("Dnipro", 200);
+
+        itineraryGuide.displayPlaces();
 
     }
 }
