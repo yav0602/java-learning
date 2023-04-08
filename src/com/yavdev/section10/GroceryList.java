@@ -27,9 +27,12 @@ class GroceryList {
 
         if(counter > 0) {
             sortGroceryList();
+            System.out.printf("%d items added", counter);
+        } else {
+            System.out.println("There aren't any groceries, that added to the list");
         }
 
-        System.out.printf("%d items added", counter);
+
     }
 
     protected void removeItems(String[] items) {

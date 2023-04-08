@@ -18,6 +18,8 @@ public class Cart {
         scanner.useDelimiter("\n");
 
         while(true) {
+            boolean shouldExit = false;
+
             System.out.println("Available actions");
             System.out.println("0) End adding items");
             System.out.println("1) Add item(s) to list (comma delimited list)");
@@ -26,16 +28,21 @@ public class Cart {
 
             final int option = scanner.nextInt();
 
-            if (option == ADD_ITEM_OPTION) {
-                final String[] items = readInputItems(scanner);
-                groceryList.addItems(items);
-            } else if (option == REMOVE_ITEM_OPTION) {
-                final String[] items = readInputItems(scanner);
-                groceryList.removeItems(items);
-            } else if (option == END_ADDING) {
+            switch (option) {
+                case ADD_ITEM_OPTION -> {
+                    final String[] items = readInputItems(scanner);
+                    groceryList.addItems(items);
+                }
+                case REMOVE_ITEM_OPTION -> {
+                    final String[] items = readInputItems(scanner);
+                    groceryList.removeItems(items);
+                }
+                case END_ADDING -> shouldExit = true;
+                default -> System.out.println("Undefined option! Please, try again");
+            }
+
+            if(shouldExit) {
                 break;
-            } else {
-                System.out.println("Undefined option! Please, try again");
             }
         }
 
