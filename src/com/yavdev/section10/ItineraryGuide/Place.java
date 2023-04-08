@@ -1,10 +1,10 @@
 package com.yavdev.section10.ItineraryGuide;
 
-record Town(String name, int distance) {
+record Place(String name, int distance) {
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof Town comparableTown) {
-            return this.name.equalsIgnoreCase(comparableTown.name) && this.distance == comparableTown.distance;
+        if(obj instanceof Place comparablePlace) {
+            return this.name.equalsIgnoreCase(comparablePlace.name) && this.distance == comparablePlace.distance;
         }
 
         return false;
