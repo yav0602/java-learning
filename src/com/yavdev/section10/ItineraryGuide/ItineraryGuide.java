@@ -87,7 +87,6 @@ public class ItineraryGuide {
         var placesNavigator = new PlacesNavigator(scanner, placesList);
         placesNavigator.startNavigator();
     }
-
     private void removePlace() {
         System.out.println("-------Remove Place-------");
         System.out.print("Write place, which you want to remove: ");
