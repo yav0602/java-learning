@@ -9,8 +9,8 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        Layer<River> riversLayer = new Layer<>();
-        Layer<Park> parksLayer = new Layer<>();
+        var riversLayer = new Layer<River<Double>>();
+        var parksLayer = new Layer<Park<Double>>();
 
         var ubileyniyPark = new Park<>(
                 "Ubileiniy",

@@ -2,13 +2,13 @@ package com.yavdev.section12.locations;
 
 import com.yavdev.section12.map.Point;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class Park<T extends ArrayList> extends Point<T> {
+public class Park<T> extends Point<T> {
     private final String name;
     private final LocationType type = LocationType.PARK;
 
-    public Park(String name, T coordinates) {
+    public Park(String name, List<T> coordinates) {
         super(coordinates);
         this.name = name;
     }

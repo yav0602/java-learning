@@ -1,15 +1,17 @@
 package com.yavdev.section12.map;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Line<T extends ArrayList<ArrayList>> implements Mappable {
+public class Line<T> implements Mappable {
 
-    private T coordinates;
+    private final List<List<T>> coordinates;
 
-    public Line(T points) {
+    public Line(List<List<T>> points) {
         if (this.validateCoordinates(points)) {
             this.coordinates = points;
         } else {
+            this.coordinates = new ArrayList<>();
             System.out.println("Your coordinates format are incorrect, so the coordinates variable is empty");
         }
     }
@@ -34,7 +36,7 @@ public class Line<T extends ArrayList<ArrayList>> implements Mappable {
         System.out.println("END OF LINE");
     }
 
-    private boolean validateCoordinates(T coordinatesArray) {
+    private boolean validateCoordinates(List<List<T>> coordinatesArray) {
         boolean valid = true;
 
         for (var pointCoordinates : coordinatesArray) {
