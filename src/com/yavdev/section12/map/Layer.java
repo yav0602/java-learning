@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Layer<T extends Mappable> {
-    private final ArrayList<T> mappableItems = new ArrayList<>();
+    private final List<T> mappableItems = new ArrayList<>();
 
     public Layer() {}
 

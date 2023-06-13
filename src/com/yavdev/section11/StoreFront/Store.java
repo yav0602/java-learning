@@ -1,13 +1,14 @@
 package com.yavdev.section11.StoreFront;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Store {
     private static final Scanner SCANNER = new Scanner(System.in);
 
-    private final ArrayList<ProductItem> productsForSaleList = new ArrayList<>();
-    private final ArrayList<OrderItem> orderedProducts = new ArrayList<>();
+    private final List<ProductItem> productsForSaleList = new ArrayList<>();
+    private final List<OrderItem> orderedProducts = new ArrayList<>();
 
     private void displayProducts(ProductType type) {
         for (int i = 0; i < this.productsForSaleList.size(); i++) {
