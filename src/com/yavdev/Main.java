@@ -8,5 +8,6 @@ public class Main {
     public static void main(String[] args) {
         var bankManager = new BankManager();
         bankManager.start();
+
     }
 }
