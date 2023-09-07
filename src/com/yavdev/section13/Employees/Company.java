@@ -5,12 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Company {
-    final private List<Employee> employees;
-
-    public Company(List<Employee> employees) {
-        this.employees = employees;
-    }
+public record Company(List<Employee> employees) {
 
     public void displayEmployees() {
         class EmployeeInfo {
@@ -31,21 +26,11 @@ public class Company {
         }
         class EmployeeInfoComparator {
             private static Comparator<EmployeeInfo> byFullName() {
-                return new Comparator<EmployeeInfo>() {
-                    @Override
-                    public int compare(EmployeeInfo o1, EmployeeInfo o2) {
-                        return o1.fullName.compareTo(o2.fullName);
-                    }
-                };
+                return Comparator.comparing(o -> o.fullName);
             }
 
             private static Comparator<EmployeeInfo> byYearsWorked() {
-                return new Comparator<EmployeeInfo>() {
-                    @Override
-                    public int compare(EmployeeInfo o1, EmployeeInfo o2) {
-                        return o1.yearsWorked - o2.yearsWorked;
-                    }
-                };
+                return Comparator.comparingInt(o -> o.yearsWorked);
             }
         }
 
