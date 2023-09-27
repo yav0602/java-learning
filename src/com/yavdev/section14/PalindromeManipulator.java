@@ -5,8 +5,9 @@ import java.util.*;
 public class PalindromeManipulator {
 
     private static final Random random = new Random();
+
     public static void main(String[] args) {
-        String[] names = {"Anna", "Tanya", "Bob", "Artur", "Kirill", "Alex"};
+        String[] names = {"Anna", "Nikolay", "Bob", "Artur", "Kirill", "Alex"};
         List<String> namesList = new ArrayList<>(Arrays.asList(names));
 
         namesList.replaceAll(s -> {
